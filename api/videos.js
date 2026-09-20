@@ -37,7 +37,7 @@ module.exports = async function handler(req, res) {
     const videos = (data.files || []).map((f) => ({
       id: f.id,
       name: f.name.replace(/\.[^.]+$/, ""),
-      src: `https://drive.usercontent.google.com/download?id=${f.id}&export=download&confirm=t`,
+      src: `/api/stream?id=${f.id}`,
       preview: `https://drive.google.com/file/d/${f.id}/preview`,
       thumb: f.thumbnailLink ? f.thumbnailLink.replace(/=s\d+$/, "=s320") : null,
       duration: f.videoMediaMetadata?.durationMillis
