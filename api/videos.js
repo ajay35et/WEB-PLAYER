@@ -4,7 +4,7 @@
 //   DRIVE_API_KEY    — Google Cloud console se banayi hui API key (Drive API enabled)
 // API key sirf server par rehti hai, browser me expose nahi hoti.
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const folder = process.env.DRIVE_FOLDER_ID;
   const key = process.env.DRIVE_API_KEY;
 
