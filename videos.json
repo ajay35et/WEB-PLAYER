@@ -1,0 +1,21 @@
+{
+  "_readme": "Agar aap API key use nahi karna chahte, to yahan manually har video ki entry daal dein. Sirf 'id' aur 'name' badalna hai — src aur preview me wahi id likh dein.",
+  "videos": [
+    {
+      "id": "YAHAN_FILE_ID_1",
+      "name": "Pehla video",
+      "src": "https://drive.usercontent.google.com/download?id=YAHAN_FILE_ID_1&export=download&confirm=t",
+      "preview": "https://drive.google.com/file/d/YAHAN_FILE_ID_1/preview",
+      "thumb": null,
+      "duration": null
+    },
+    {
+      "id": "YAHAN_FILE_ID_2",
+      "name": "Dusra video",
+      "src": "https://drive.usercontent.google.com/download?id=YAHAN_FILE_ID_2&export=download&confirm=t",
+      "preview": "https://drive.google.com/file/d/YAHAN_FILE_ID_2/preview",
+      "thumb": null,
+      "duration": null
+    }
+  ]
+}

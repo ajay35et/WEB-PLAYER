@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Drive Videos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <aside class="rail">
+    <div class="rail-head">
+      <h1>My Drive Videos</h1>
+      <p class="count" id="count">Loading…</p>
+      <input id="search" class="search" type="search" placeholder="Video dhundhein" autocomplete="off">
+    </div>
+    <ol class="list" id="list"></ol>
+    <div class="rail-foot">
+      <label class="toggle">
+        <input type="checkbox" id="autonext" checked>
+        <span>Video khatam hone par agla chalu karein</span>
+      </label>
+    </div>
+  </aside>
+
+  <main class="stage">
+    <div class="screen" id="screen">
+      <video id="player" playsinline preload="metadata"></video>
+      <iframe id="fallback" class="hidden" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+      <div class="overlay" id="overlay">
+        <p class="overlay-title" id="overlayTitle">Koi video select karein</p>
+        <p class="overlay-note" id="overlayNote">Left side ki list se video chunein.</p>
+        <button class="btn-ghost hidden" id="useDrive">Drive ke player se chalayein</button>
+      </div>
+
+      <div class="spinner hidden" id="spinner"></div>
+    </div>
+
+    <div class="controls" id="controls">
+      <div class="bar" id="bar">
+        <div class="bar-buffer" id="barBuffer"></div>
+        <div class="bar-played" id="barPlayed"></div>
+        <div class="bar-knob" id="barKnob"></div>
+      </div>
+
+      <div class="row">
+        <button class="ctrl" id="prev" title="Pichla video (P)" aria-label="Pichla video">
+          <svg viewBox="0 0 24 24"><path d="M7 5v14M20 5 9 12l11 7z"/></svg>
+        </button>
+
+        <button class="ctrl play" id="play" title="Play / Pause (Space)" aria-label="Play">
+          <svg id="iconPlay" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg>
+          <svg id="iconPause" class="hidden" viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg>
+        </button>
+
+        <button class="ctrl" id="next" title="Agla video (N)" aria-label="Agla video">
+          <svg viewBox="0 0 24 24"><path d="M17 5v14M4 5l11 7-11 7z"/></svg>
+        </button>
+
+        <span class="time"><span id="cur">0:00</span> <i>/</i> <span id="dur">0:00</span></span>
+
+        <span class="flex"></span>
+
+        <div class="speed">
+          <button class="ctrl wide" id="speedBtn" title="Speed ( [ aur ] )">1×</button>
+          <div class="menu hidden" id="speedMenu"></div>
+        </div>
+
+        <button class="ctrl" id="mute" title="Mute (M)" aria-label="Mute">
+          <svg id="iconVol" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM16.5 8.5a5 5 0 0 1 0 7M19 6a8 8 0 0 1 0 12"/></svg>
+          <svg id="iconMute" class="hidden" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM17 9l4 6M21 9l-4 6"/></svg>
+        </button>
+        <input id="vol" class="vol" type="range" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+
+        <button class="ctrl" id="full" title="Fullscreen (F)" aria-label="Fullscreen">
+          <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="now">
+      <h2 id="title">—</h2>
+      <p class="hint">Space = play/pause · ← → = 10 sec · N / P = next, previous · [ ] = speed · F = fullscreen</p>
+    </div>
+  </main>
+
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>
